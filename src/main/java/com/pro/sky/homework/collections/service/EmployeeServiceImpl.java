@@ -35,8 +35,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         if (!employeeList.contains(employee)) {
             throw new EmployeeNotFoundException("Данный сотрудник не найден");
         }
-        employeeList.remove(employee);
-        return employee;
+        if (employeeList.contains(employee)) {
+            employeeList.remove(employee);
+            return employee;
+        }
+        return null;
     }
 
     @Override
@@ -50,6 +53,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public List<Employee> getAll() {
-        return employeeList;
+        return new ArrayList<>(employeeList);
     }
 }
