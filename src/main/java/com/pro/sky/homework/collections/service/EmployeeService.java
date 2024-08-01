@@ -3,6 +3,7 @@ package com.pro.sky.homework.collections.service;
 import com.pro.sky.homework.collections.Employee;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -22,5 +23,5 @@ public interface EmployeeService {
     Employee find(String fistName, String lastName);
 
     //Метод для получения списка
-    List<Employee> getAll();
+    Collection<Employee> getAll();
 }
